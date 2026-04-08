@@ -104,4 +104,5 @@ jobs:
         with:
           files: ${{ env.MODULE_PATH }}
           name: ${{ env.MODULE_VERSION }}
+          tag_name: ${{ startsWith(github.ref, 'refs/tags/') && github.ref_name || format('dev-{0}', github.sha) }}
           generate_release_notes: true
